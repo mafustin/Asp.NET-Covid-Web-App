@@ -1,0 +1,43 @@
+﻿@model Covid19WebApp.Models.Covid
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Covid</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Oib" class="control-label"></label>
+                <input asp-for="Oib" class="form-control" />
+                <span asp-validation-for="Oib" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImePrezime" class="control-label"></label>
+                <input asp-for="ImePrezime" class="form-control" />
+                <span asp-validation-for="ImePrezime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rezultatiTesta" class="control-label"></label>
+                <input asp-for="rezultatiTesta" class="form-control" />
+                <span asp-validation-for="rezultatiTesta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
